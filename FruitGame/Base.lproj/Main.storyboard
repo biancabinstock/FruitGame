@@ -43,6 +43,20 @@
                                     <outletCollection property="gestureRecognizers" destination="ZbH-NW-oUn" appends="YES" id="tOV-ei-Dcx"/>
                                 </connections>
                             </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banana.png" translatesAutoresizingMaskIntoConstraints="NO" id="CwK-3h-9yW">
+                                <rect key="frame" x="160" y="6" width="143" height="82"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ixs-xe-ypU" appends="YES" id="dSk-h4-29g"/>
+                                </connections>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="banana@1x" translatesAutoresizingMaskIntoConstraints="NO" id="Gw6-tt-ZUm">
+                                <rect key="frame" x="311" y="6" width="144" height="83"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VWE-lZ-ynL" appends="YES" id="Ae1-g4-oPg"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -65,6 +79,16 @@
                         <action selector="handlePan:" destination="BYZ-38-t0r" id="gvy-u7-RuH"/>
                     </connections>
                 </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="Ixs-xe-ypU">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="Hbe-JC-NBQ"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="VWE-lZ-ynL">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="gdy-Px-gef"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="161" y="348"/>
         </scene>
@@ -72,6 +96,8 @@
     <resources>
         <image name="appleAsset.png" width="170" height="174"/>
         <image name="backgroundLevel1B.png" width="1024" height="768"/>
+        <image name="banana.png" width="337" height="195"/>
+        <image name="banana@1x" width="337" height="195"/>
         <image name="bowlAsset.png" width="672" height="509"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
