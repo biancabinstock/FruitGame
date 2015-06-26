@@ -13,6 +13,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+   // create background
+// self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundLevel1.png")!)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +24,16 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    //  callback for apple pan
+    @IBAction func handlePan(recognizer:UIPanGestureRecognizer) {
+        let translation = recognizer.translationInView(self.view)
+        if let view = recognizer.view {
+            view.center = CGPoint(x:view.center.x + translation.x,
+                y:view.center.y + translation.y)
+        }
+        recognizer.setTranslation(CGPointZero, inView: self.view)
+    }
+    
 
 }
 
