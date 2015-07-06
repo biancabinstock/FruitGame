@@ -10,6 +10,14 @@ import UIKit
 
 class MainScreen: UIViewController {
 
+    @IBAction func Settings(sender: AnyObject) {
+        self.performSegueWithIdentifier("settingsSegue", sender: self)
+        
+    }
+    @IBAction func MainGame(sender: AnyObject) {
+        
+        self.performSegueWithIdentifier("maingame", sender: self)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +29,7 @@ class MainScreen: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
 

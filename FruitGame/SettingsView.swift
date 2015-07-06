@@ -8,11 +8,31 @@
 
 import UIKit
 
-class SettingsView: UIViewController {
+class SettingsView: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate  {
 
+    @IBOutlet var levelPicker: UIPickerView!
+    
+    @IBOutlet var fruitNumberPicker: UIPickerView!
+   
+    @IBOutlet var fruitTypePicker: UIPickerView!
+    
+    var levelPickerData = ["1","2","3","4"]
+    var fruitNumberData = ["1", "3", "5"]
+    var fruitTypeData = ["apple", "banana", "pear", "orange", "grape"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        levelPicker.dataSource = self
+        levelPicker.delegate = self
+        
+        fruitNumberPicker.dataSource = self
+        fruitNumberPicker.delegate = self
+        
+        fruitTypePicker.dataSource = self
+        fruitTypePicker.delegate = self
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -20,8 +40,56 @@ class SettingsView: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    //MARK: Data Sources
+//    LevelPicker
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return fruitNumberData.count
+    }
+   
+    //MARK: Delegates
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return fruitNumberData[row]
+    }
+    
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        myLabel.text = levelPickerData[row]
+    }
     
 
+    
+    
+    
+//    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        return fruitNumberData.count
+    
+//    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+//        return fruitNumberData[row]
+
+    
+//    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+//        // myLabel.text = levelPickerData[row]
+//    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
